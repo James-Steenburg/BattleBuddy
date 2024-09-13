@@ -1,0 +1,289 @@
+﻿<Window x:Class="BattleBuddy.Views.InitiativeTrackerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:maControls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:converters="clr-namespace:BattleBuddy.Converters"
+        xmlns:local="clr-namespace:BattleBuddy.Views"
+        mc:Ignorable="d"
+        Title="Initiative Tracker" Height="400" Width="500"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <converters:ColorToSolidColorBrushValueConverter x:Key="ColorConverterKey"/>
+
+            <Style TargetType="{x:Type ItemsControl}">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderThickness="1"
+            CornerRadius="10">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" 
+                                     EndPoint="1,1">
+                <GradientStop Color="{Binding Palette.Palette_BorderColor_Darker}" 
+                                  Offset="0"/>
+                <GradientStop Color="{Binding Palette.Palette_BorderColor}" 
+                                  Offset="0.5"/>
+                <GradientStop Color="{Binding Palette.Palette_BorderColor_Lighter}" 
+                                  Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" 
+                                             EndPoint="1,0.7">
+                <GradientStop Color="{Binding Palette.Palette_BackgroundColor_Darker1}" 
+                                          Offset="0"/>
+                <GradientStop Color="{Binding Palette.Palette_BackgroundColor}" 
+                                          Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!--Control Bar-->
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--Control Bar-->
+            <StackPanel x:Name="pnlControlBar"
+                                    Grid.Row="0"
+                                    Orientation="Horizontal"
+                                    FlowDirection="RightToLeft"
+                                    Background="Transparent"
+                                    Margin="0,0,10,0"
+                                    MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
+                                    MouseEnter="pnlControlBar_MouseEnter" >
+
+                <Button x:Name="btnClose"
+                                    Style="{StaticResource controlButton}"
+                                    Tag="{StaticResource color4}"
+                                    Click="btnClose_Click">
+                    <fa:IconImage Icon="Xmark" 
+                                              Style="{StaticResource controlButtonIcon}"
+                                              Foreground="{Binding Palette.Palette_IconColor, Converter={StaticResource ColorConverterKey}}"/>
+                </Button>
+
+                <Button x:Name="btnMaximize"
+                                    Style="{StaticResource controlButton}"
+                                    Tag="{StaticResource color4}"
+                                    Click="btnMaximize_Click">
+                    <fa:IconImage Icon="Square" 
+                                              Style="{StaticResource controlButtonIcon}"
+                                              Foreground="{Binding Palette.Palette_IconColor, Converter={StaticResource ColorConverterKey}}"/>
+                </Button>
+
+                <Button x:Name="btnMinimize"
+                                    Style="{StaticResource controlButton}"
+                                    Tag="{StaticResource color4}"
+                                    Click="btnMinimize_Click">
+                    <fa:IconImage Icon="WindowMinimize" 
+                                              Style="{StaticResource controlButtonIcon}"
+                                              Foreground="{Binding Palette.Palette_IconColor, Converter={StaticResource ColorConverterKey}}"/>
+                </Button>
+            </StackPanel>
+            <!--Input Content-->
+            <StackPanel Margin="10" Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Name"          
+                               Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"     
+                               FontSize="12"            
+                               FontWeight="Medium"      
+                               FontFamily="Montserrat"    
+                               Margin="0,15,0,0"/>
+                        <TextBox x:Name="txtClass2" 
+                             Text="{Binding TargetInitiativeTrackerModel.Name}"
+                             FontSize="13"            
+                             FontWeight="Medium"        
+                             FontFamily="Montserrat"    
+                             Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"       
+                             Background="Transparent"     
+                             CaretBrush="LightGray"     
+                             BorderBrush="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"     
+                             BorderThickness="0,0,0,2"      
+                             Height="28"         
+                             VerticalContentAlignment="Center"  
+                             Margin="0,5,10,0"        
+                             Padding="5,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <TextBlock Text="Initiative"     
+                               Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"    
+                               FontSize="12"          
+                               FontWeight="Medium"      
+                               FontFamily="Montserrat"   
+                               Margin="0,15,0,0"/>
+                        <TextBox x:Name="txtClass3"   
+                             Text="{Binding TargetInitiativeTrackerModel.Initiative}"
+                             FontSize="13"          
+                             FontWeight="Medium"       
+                             FontFamily="Montserrat"      
+                             Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"       
+                             Background="Transparent"   
+                             CaretBrush="LightGray"     
+                             BorderBrush="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"     
+                             BorderThickness="0,0,0,2"    
+                             Height="28"         
+                             VerticalContentAlignment="Center"     
+                             Margin="0,5,10,0"    
+                             Padding="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,20">
+
+                    <Button Command="{Binding InitAddCommmand}"     
+                        Content="Add to Initiative Order"                  
+                        Margin="5"      
+                        FontSize="12"    
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"
+                        VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="{Binding Palette.Palette_ButtonColor, Converter={StaticResource ColorConverterKey}}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30"           
+                                                CornerRadius="15"          
+                                                Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"                  
+                                                              Margin="10,0,10,0"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{Binding Palette.Palette_ButtonHoverColor, Converter={StaticResource ColorConverterKey}}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Command="{Binding InitDeleteCommmand}"
+                        CommandParameter="{Binding ElementName=lvInitiative, Path=SelectedItem}"    
+                        Content="Remove from Initiative Order"                  
+                        Margin="5"      
+                        FontSize="12"    
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"
+                        VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="{Binding Palette.Palette_ButtonColor, Converter={StaticResource ColorConverterKey}}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30"           
+                                                CornerRadius="15"          
+                                                Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"                  
+                                                              Margin="10,0,10,0"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{Binding Palette.Palette_ButtonHoverColor, Converter={StaticResource ColorConverterKey}}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Click="SortButton_Click"    
+                        Content="Sort Initiative"                  
+                        Margin="5"      
+                        FontSize="12"    
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}"
+                        VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="{Binding Palette.Palette_ButtonColor, Converter={StaticResource ColorConverterKey}}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30"           
+                                                CornerRadius="15"          
+                                                Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"                  
+                                                              Margin="10,0,10,0"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{Binding Palette.Palette_ButtonHoverColor, Converter={StaticResource ColorConverterKey}}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+            <Border Grid.Row="2" CornerRadius="0,0,10,10">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" 
+                                             EndPoint="0,0">
+                        <GradientStop Color="{Binding Palette.Palette_BackgroundColor_Darker3}" 
+                                          Offset="0"/>
+                        <GradientStop Color="{Binding Palette.Palette_BackgroundColor}" 
+                                          Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ListView x:Name="lvInitiative" Grid.Row="1"
+                  Background="Transparent" ItemsSource="{Binding InitiativeTrackerModels}"
+                  SelectionMode="Single"
+                          BorderThickness="0,1,0,0"
+                          Foreground="{Binding Palette.Palette_TextColor, Converter={StaticResource ColorConverterKey}}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="{Binding Name}"/>
+                                <TextBlock Text=" - "/>
+                                <TextBlock Text="{Binding Initiative}"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,196 @@
+﻿<UserControl x:Class="BattleBuddy.TestViews.TestSettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:maControls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:local="clr-namespace:BattleBuddy.TestViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="#200F53"
+                                        CornerRadius="10" 
+                                        Padding="10"
+                                        Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--Left Column-->
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <TextBlock Text="Themes:" 
+                       Foreground="White"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       Margin="10"/>
+                
+                <StackPanel Orientation="Horizontal"
+                                                    Margin="10">
+                    <fa:IconImage Icon="CriticalRole" 
+                                                          Style="{StaticResource iconButtonIcon}"
+                                                          Foreground="White"
+                                                          Width="25" Height="25"
+                                                          VerticalAlignment="Center"
+                                                          Margin="0,0,10,0"/>
+                    <TextBlock Text="Critical Role Vox Machina Theme" 
+                                                       Foreground="White"
+                                                       FontSize="18"
+                                                       VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                                                    Margin="10">
+                    <fa:IconImage Icon="CriticalRole" 
+                                                          Style="{StaticResource iconButtonIcon}"
+                                                          Foreground="White"
+                                                          Width="25" Height="25"
+                                                          VerticalAlignment="Center"
+                                                          Margin="0,0,10,0"/>
+                    <TextBlock Text="Critical Role Mighty Nein Theme" 
+                                                       Foreground="White"
+                                                       FontSize="18"
+                                                       VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                                                    Margin="10">
+                    <fa:IconImage Icon="DAndD" 
+                                                          Style="{StaticResource iconButtonIcon}"
+                                                          Foreground="White"
+                                                          Width="25" Height="25"
+                                                          VerticalAlignment="Center"
+                                                          Margin="0,0,10,0"/>
+                    <TextBlock Text="Dungeons and Dragons Theme" 
+                                                       Foreground="White"
+                                                       FontSize="18"
+                                                       VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                                                    Margin="10">
+                    <fa:IconImage Icon="Palette" 
+                                                          Style="{StaticResource iconButtonIcon}"
+                                                          Foreground="White"
+                                                          Width="25" Height="25"
+                                                          VerticalAlignment="Center"
+                                                          Margin="0,0,10,0"/>
+                    <TextBlock Text="Custom Theme" 
+                                                       Foreground="White"
+                                                       FontSize="18"
+                                                       VerticalAlignment="Center"/>
+                </StackPanel>
+                <!--maControls:ColorCanvas Margin="10" Height="170"/-->
+
+            </StackPanel>
+
+
+            <!--Right Column-->
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <!--label-->
+                <TextBlock Text="Party Default Data File Path"
+                           Grid.Row="0" 
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           Foreground="DarkGray"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"                             
+                           Margin="10,20,0,0"/>
+                <!-- text box -->
+                <TextBox x:Name="DefaultFilePathBox"
+                         Text="{Binding TargetCharacter.Name}"
+                         Grid.Row="1" 
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"
+                         FontSize="13"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"                            
+                         Foreground="White"
+                         Background="Transparent"
+                         CaretBrush="LightGray"
+                         BorderBrush="DarkGray"
+                         BorderThickness="0,0,0,2"
+                         Height="28"
+                         VerticalContentAlignment="Center"
+                         Margin="10,5,10,0"
+                         Padding="5,0,0,0"/>
+                
+                <!--label-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Custom Background Image File path"
+                           Grid.Row="0" 
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           Foreground="DarkGray"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"                             
+                           Margin="10,20,0,0"/>
+                    <Button Style="{StaticResource iconButton}"
+                                    Tag="{StaticResource color3}"
+                                    ToolTip="Heal"
+                                    Margin="10,0,0,0"
+                                    VerticalAlignment="Bottom">
+                        <fa:IconImage Icon="FolderOpen" 
+                                              Style="{StaticResource iconButtonIcon}"
+                                              Width="20" Height="20"/>
+                    </Button>
+                </StackPanel>
+                <!-- text box -->
+                <TextBox x:Name="CustomBackgroundImagePathBox"
+                         Text="{Binding TargetCharacter.Name}"
+                         Grid.Row="1" 
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"
+                         FontSize="13"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"                            
+                         Foreground="White"
+                         Background="Transparent"
+                         CaretBrush="LightGray"
+                         BorderBrush="DarkGray"
+                         BorderThickness="0,0,0,2"
+                         Height="28"
+                         VerticalContentAlignment="Center"
+                         Margin="10,5,10,0"
+                         Padding="5,0,0,0"/>
+                
+                <!--more controls-->
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    
+                    <maControls:ToggleSwitch OnContent="Background Images Enabled"
+                                             OffContent="Background Images Disabled"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <maControls:ToggleSwitch OnContent="Unique Character Colors in Party View Enabled"
+                                             OffContent="Unique Character Colors in Party View Disabled"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <maControls:ToggleSwitch OnContent="Unique Character Colors in Character View Enabled"
+                                             OffContent="Unique Character Colors in Character View Disabled"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <maControls:ToggleSwitch OnContent="Touchscreen Controls Enabled"
+                                             OffContent="Touchscreen Controls Disabled"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <maControls:ToggleSwitch OnContent="Hex Menu Buttons Enabled"
+                                             OffContent="Hex Menu Buttons Disabled"/>
+
+                </StackPanel>
+
+            </StackPanel>
+            
+            
+            
+            
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,73 @@
+﻿Name: Battle Buddy
+
+TODO:
+	3.	Color Themes settings
+			>>Set up toggle for character specific colors
+*J			>>Figure out default character colors
+	4.	Change user data folder to be at LocalApplicationData (look into Windows special folders etc etc)
+			>>Requires Version 1 completion. Do before packaging app.
+			>>change restore defaults with new paths too
+	9.	Add Icon="Images\AppImage.png" in MainWindow.xaml properties once you have a higher resolution png
+*J			>>Look into image sharpening tool
+	20. Passive Perception and Insight on Summary
+*J			>>Figure out where to put them. Left side of damage buttons? 
+	28. Add edit character page
+			>>Requires Add character page to be completely finished (colors and all)
+			>>add a delete option on this page
+	29. Add Spell DC and atk modifiers?
+	35. Character portrait resize
+	36. Full GIT integration
+			>>Requires Version 1 completion
+	37. Add color settings to UserSettings and update file IO
+	38. Settings IO LV text color needs to be fixed. column header issue.
+
+
+Road Map:
+	Version 1.0:
+		- Basic Functionality
+		- XML IO: Settings and Party Data
+		- Customization: Themes, Background Images, Color Canvas
+		- Character: Names, Pictures, Ability Scores, HP, AC, Conditions, Color Theme, Custom Trackers, 
+					 Ability, Saving Throw, and Skill modifiers
+		- Party: Name
+		- Combat: Initiative Tracker, Concentration Check Reminders
+		- Info: GIT link to project code, 
+
+	Future Versions:
+		- Characters: 2nd Detail Page for Spellcasters, Spell Slots, Known Spells, Quotes
+			>> Spell Slots could be shown in the form of icon buttons?
+		- Touchscreen mode
+		- NPC Name Generator
+		- Hex party list selection option
+		- dice rolling feature? (look at fa gaming tag)
+		- Storyboard splash screen?
+
+Sarcastic lower lines:
+	1. When Things Get Dicey
+	2. Crit Happens
+	3. Pain is Temporary, Glory lasts Forever
+	4. Healing Potions are Overrated
+	5. Keep the Murder Hobos Alive
+	6. DM Insurance
+	7. The End is Near
+	8. Total Party Killjoy
+	9. Days Since TPK?
+	10. A TPK is just a minor set back right?
+	11. When you need a little divine intervention
+	12. Dont worry you can always start a new campaign
+
+Character Descriptions:
+	1. Nette -
+	2. Aravek - 
+	3. Eldan - 
+	4. Hilda - 
+	5. Ruggles - 
+	6. Zayne - 
+
+Layout:
+Dashboard has all party members HP and condition tags -> if no party, prompt to go to settings to create a party
+Side menus are party members with specific data
+Settings has:
+	import/export xml party data
+	theme and background changes
+	Button to clear and add new party?

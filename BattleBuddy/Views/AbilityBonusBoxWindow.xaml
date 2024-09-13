@@ -1,0 +1,89 @@
+﻿<Window x:Class="BattleBuddy.Views.AbilityBonusBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:maControls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:BattleBuddy.Views"
+        mc:Ignorable="d"
+        Title="Ability Bonuses Menu" Height="250" Width="450"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ComboBox Name="cmbBonus" Grid.Column="0" Width="180" Height="20" SelectedValuePath="Content"
+                  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+            <ComboBoxItem Content="Initiative"/>
+            <ComboBoxItem Content="Passive Perception"/>
+            <ComboBoxItem Content="Passive Insight"/>
+            <ComboBoxItem Content="Strength Saving Throw"/>
+            <ComboBoxItem Content="Dexterity Saving Throw"/>
+            <ComboBoxItem Content="Constitution Saving Throw"/>
+            <ComboBoxItem Content="Intelligence Saving Throw"/>
+            <ComboBoxItem Content="Wisdom Saving Throw"/>
+            <ComboBoxItem Content="Charisma Saving Throw"/>
+            <ComboBoxItem Content="Acrobatics"/>
+            <ComboBoxItem Content="Animal Handling"/>
+            <ComboBoxItem Content="Arcana"/>
+            <ComboBoxItem Content="Athletics"/>
+            <ComboBoxItem Content="Deception"/>
+            <ComboBoxItem Content="History"/>
+            <ComboBoxItem Content="Insight"/>
+            <ComboBoxItem Content="Intimidation"/>
+            <ComboBoxItem Content="Investigation"/>
+            <ComboBoxItem Content="Medicine"/>
+            <ComboBoxItem Content="Nature"/>
+            <ComboBoxItem Content="Perception"/>
+            <ComboBoxItem Content="Performance"/>
+            <ComboBoxItem Content="Persuasion"/>
+            <ComboBoxItem Content="Religion"/>
+            <ComboBoxItem Content="Sleight of Hand"/>
+            <ComboBoxItem Content="Stealth"/>
+            <ComboBoxItem Content="Survival"/>
+        </ComboBox>
+
+        <StackPanel Orientation="Vertical" Margin="10,5,0,0" Grid.Column="1">
+            <StackPanel.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </StackPanel.Resources>
+            <maControls:ToggleSwitch Name="toggleSwitchProficient"
+                                     OnContent="Proficient"
+                                     OffContent="Not Proficient" Foreground="Black"
+                                     IsOn="{Binding IsTargetAbilityProficient, Mode=TwoWay}"/>
+            <maControls:ToggleSwitch Name="toggleSwitchExpertise"
+                                     OnContent="Expertise"
+                                     OffContent="No Expertise" Foreground="Black"
+                                     IsOn="{Binding IsTargetAbilityExpert, Mode=TwoWay}"/>
+            <TextBox Name="txtAdditionalBonus" Grid.Column="1" Width="160" HorizontalAlignment="Left">
+                <TextBox.Text>
+                    Additional bonuses here
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+
+        
+
+        <Button Name="btnAddBonus" 
+                Margin="10,10,20,20"
+                Grid.Column="1" 
+                Grid.Row="1" 
+                Content="Add Skill Bonus"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="160"
+                Click="btnAddBonus_Click"/>
+    </Grid>
+</Window>

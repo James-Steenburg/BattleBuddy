@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings
+	DefaultPartyFilePath="FakePartyFilePath"
+	BackgroundImageFilePath="FakeBackgroundImageFilePath"
+	UseBackgroundImage="False"
+	ApplicationTheme="1"
+	UseCharacterUniqueColorsInDetailView="False"
+	UseCharacterUniqueColorsInSummaryView="False"
+	InTouchScreenMode="False"
+	InHexModeCharacterList="False">
+  <Condition>
+    <ConditionName>temp</ConditionName>
+    <ConditionDescription>temp</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Blinded</ConditionName>
+    <ConditionDescription>A blinded creature can't see and automatically fails any ability check that requires sight. Attack rolls against the creature have advantage and the creature's attack rolls have disadvantage.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Charmed</ConditionName>
+    <ConditionDescription>A charmed creature can't attack the charmer or target the charmer with harmful abilities or magical effects. The charmer has advantage on any ability check to interact socially with the creature.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Deafened</ConditionName>
+    <ConditionDescription>A deafened creature can't hear and automatically fails any ability check that requires hearing.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Frightened</ConditionName>
+    <ConditionDescription>A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight. The creature can't willingly move closer to the source of its fear.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Grappled</ConditionName>
+    <ConditionDescription>A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed. The condition ends if the grappler is incapacitated. </ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Incapacitated</ConditionName>
+    <ConditionDescription>An incapacitated creature can't take actions or reactions.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Invisible</ConditionName>
+    <ConditionDescription>An invisible creature is impossible to see without the aid of magic or a Special sense. For the Purpose of hiding, the creature is heavily obscured. The creature’s Location can be detected by any noise it makes or any tracks it leaves. Attack rolls against the creature have disadvantage, and the creature’s Attack rolls have advantage.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Paralyzed</ConditionName>
+    <ConditionDescription>A paralyzed creature is incapacitated and can’t move or speak. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Petrified</ConditionName>
+    <ConditionDescription>A petrified creature is Transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging. The creature is incapacitated (see the condition), can’t move or speak, and is unaware of its surroundings. Attack rolls against the creature have advantage. The creature automatically fails Strength and Dexterity saving throws. The creature has resistance to all damage. The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Poisoned</ConditionName>
+    <ConditionDescription>A poisoned creature has disadvantage on attack rolls and ability checks.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Prone</ConditionName>
+    <ConditionDescription>A prone creature’s only movement option is to crawl, unless it stands up and thereby ends the condition. The creature has disadvantage on attack rolls. An attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the Attack roll has disadvantage.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Restrained</ConditionName>
+    <ConditionDescription>A restrained creature’s speed becomes 0, and it can’t benefit from any bonus to its speed. Attack rolls against the creature have advantage, and the creature’s Attack rolls have disadvantage. The creature has disadvantage on Dexterity saving throws.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Stunned</ConditionName>
+    <ConditionDescription>A stunned creature can't take actions, reactions, can't move, and can speak only falteringly. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Unconscious</ConditionName>
+    <ConditionDescription>An unconscious creature is incapacitated, can’t move or speak, and is unaware of its surroundings. The creature drops whatever it’s holding and falls prone. The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Exhaustion 1</ConditionName>
+    <ConditionDescription>A creature with exhaustion(1) has disadvantage on ability checks.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Exhaustion 2</ConditionName>
+    <ConditionDescription>A creature with exhaustion(2) has disadvantage on ability checks and halved speed.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Exhaustion 3</ConditionName>
+    <ConditionDescription>A creature with exhaustion(3) has disadvantage on ability checks, attack rolls, and saving throws, and halved speed.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Exhaustion 4</ConditionName>
+    <ConditionDescription>A creature with exhaustion(4) has disadvantage on ability checks, attack rolls, and saving throws, halved speed, and halved maximum hitpoints.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Exhaustion 5</ConditionName>
+    <ConditionDescription>A creature with exhaustion(5) has disadvantage on ability checks, attack rolls, and saving throws, no movement speed, and halved maximum hitpoints.</ConditionDescription>
+  </Condition>
+  <Condition>
+    <ConditionName>Exhaustion 6</ConditionName>
+    <ConditionDescription>A creature with exhaustion level 6 dies.</ConditionDescription>
+  </Condition>
+</Settings>

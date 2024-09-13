@@ -1,0 +1,44 @@
+<Party>PartyNameHere
+    <Character  Name="RandomGuy" 
+                Class="Fighter" 
+                Level="3" 
+                MaxHitpoints="22" 
+                CurrentHitpoints="20" 
+                ArmorClass="11" 
+                Strength="10" 
+                Dexterity="10" 
+                Constitution="10" 
+                Intelligence="10" 
+                Wisdom="10" 
+                Charisma="10">
+                    RandomGuy
+    </Character>
+    <Character  Name="Billy" 
+                Class="Cleric" 
+                Level="3" 
+                MaxHitpoints="22" 
+                CurrentHitpoints="20" 
+                ArmorClass="11" 
+                Strength="10" 
+                Dexterity="10" 
+                Constitution="10" 
+                Intelligence="10" 
+                Wisdom="10" 
+                Charisma="10">
+                    Billy
+    </Character>
+    <Character  Name="Nette" 
+                Class="Bard" 
+                Level="3" 
+                MaxHitpoints="22" 
+                CurrentHitpoints="20" 
+                ArmorClass="11" 
+                Strength="10" 
+                Dexterity="10" 
+                Constitution="10" 
+                Intelligence="10" 
+                Wisdom="10" 
+                Charisma="10">
+                    Nette
+    </Character>
+</Party>
